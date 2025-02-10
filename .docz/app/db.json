@@ -42,22 +42,27 @@
       }
     },
     {
-      "key": "pages/docz/conponents/buttons/ButtonDemo.mdx",
+      "key": "pages/docz/conponents/shift-schdule/buttons/ButtonDemo.mdx",
       "value": {
         "name": "DemoButton",
         "route": "/",
-        "id": "53eb67392303c4645490303bb5087fd4",
-        "filepath": "pages/docz/conponents/buttons/ButtonDemo.mdx",
-        "fullpath": "/Users/bkfullstack/Works/docz-component/pages/docz/conponents/buttons/ButtonDemo.mdx",
+        "id": "d57b13f4af6d15ced3fda6e0ba3ac0c8",
+        "filepath": "pages/docz/conponents/shift-schdule/buttons/ButtonDemo.mdx",
+        "fullpath": "/Users/bkfullstack/Works/docz-component/pages/docz/conponents/shift-schdule/buttons/ButtonDemo.mdx",
         "link": "",
         "hidden": false,
-        "slug": "pages-docz-conponents-buttons-button-demo",
+        "slug": "pages-docz-conponents-shift-schdule-buttons-button-demo",
         "menu": "",
         "headings": [
           {
             "slug": "button",
             "depth": 1,
             "value": "Button"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
           },
           {
             "slug": "basic-usage",
@@ -68,17 +73,5 @@
       }
     }
   ],
-  "props": [
-    {
-      "key": "pages/docz/conponents/buttons/ButtonAnd.jsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "ButtonAntd",
-          "methods": [],
-          "actualName": "ButtonAntd"
-        }
-      ]
-    }
-  ]
+  "props": []
 }

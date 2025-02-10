@@ -1,0 +1,33 @@
+---
+name: DemoButton
+route: /
+---
+
+import { Playground, Props } from 'docz'
+import ShiftNameButton from '../../../../components/shifts/buttons/ShiftNameButton';
+
+# Button
+
+## API
+
+| Prop            | Type     | Description                             | Default Value   |
+|-----------------|----------|-----------------------------------------|-----------------|
+| **colorCode**   | `string` | รหัสสีของปุ่ม                          | `#0DAA17`       |
+| **isCheckBox**  | `boolean`| แสดง CheckBox หรือไม่                | `true`          |
+| **isLock**      | `boolean`| ล็อกปุ่มหรือไม่                         | `true`          |
+| **valueCheckBox**| `boolean`| ค่าของ CheckBox                    | `true`          |
+| **labelShort**  | `string` | ชื่อย่อของปุ่ม                          | `'SH0'`         |
+
+## Basic usage
+
+<Playground>
+   <ShiftNameButton
+    colorCode="#FF5733"
+    isCheckBox={false}
+    isLock={true}
+    valueCheckBox={false}
+    labelShort="SH1"
+/>
+</Playground>
+
+

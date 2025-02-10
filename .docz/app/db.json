@@ -1,0 +1,84 @@
+{
+  "config": {
+    "title": "Docz Component",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "version": "0.1.0",
+    "repository": null,
+    "native": false,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "README.md",
+      "value": {
+        "id": "04c6e90faac2675aa89e2176d2eec7d8",
+        "filepath": "README.md",
+        "fullpath": "/Users/bkfullstack/Works/docz-component/README.md",
+        "link": "",
+        "hidden": false,
+        "slug": "readme",
+        "route": "/readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "getting-started",
+            "depth": 2,
+            "value": "Getting Started"
+          },
+          {
+            "slug": "learn-more",
+            "depth": 2,
+            "value": "Learn More"
+          },
+          {
+            "slug": "deploy-on-vercel",
+            "depth": 2,
+            "value": "Deploy on Vercel"
+          }
+        ]
+      }
+    },
+    {
+      "key": "pages/docz/conponents/buttons/ButtonDemo.mdx",
+      "value": {
+        "name": "DemoButton",
+        "route": "/",
+        "id": "53eb67392303c4645490303bb5087fd4",
+        "filepath": "pages/docz/conponents/buttons/ButtonDemo.mdx",
+        "fullpath": "/Users/bkfullstack/Works/docz-component/pages/docz/conponents/buttons/ButtonDemo.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "pages-docz-conponents-buttons-button-demo",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "button",
+            "depth": 1,
+            "value": "Button"
+          },
+          {
+            "slug": "basic-usage",
+            "depth": 2,
+            "value": "Basic usage"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "pages/docz/conponents/buttons/ButtonAnd.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "ButtonAntd",
+          "methods": [],
+          "actualName": "ButtonAntd"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+---
+name: ShiftShortName
+route: /
+---
+
+import { Playground, Props } from 'docz'
+import ShiftShortName from '../../../../components/shifts/buttons/ShiftShortName';
+import { useState } from 'react';
+
+# Button
+
+## API
+
+| Prop            | Type     | Description                             | Default Value   |
+|-----------------|----------|-----------------------------------------|-----------------|
+| **colorCode**   | `string` | รหัสสีของปุ่ม                          | `#0DAA17`       |
+| **isCheckBox**  | `boolean`| แสดง CheckBox หรือไม่                | `true`          |
+| **isLock**      | `boolean`| ล็อกปุ่มหรือไม่                         | `true`          |
+| **valueCheckBox**| `boolean`| ค่าของ CheckBox                    | `true`          |
+| **labelShort**  | `string` | ชื่อย่อของปุ่ม                          | `'SH0'`         |
+| **onCheckBox**  | `Function` | Function Callback                | `() => {}`      |
+
+## Basic usage
+
+<Playground>
+{
+ () => {
+   const [checkBoxVal, setCheckBox] =  useState(false)
+ const handleCheckBox = (e) => {
+   setCheckBox(e.target.checked)
+   }
+  return ( <ShiftShortName
+    colorCode="#0DAA17"
+    isCheckBox={true}
+    isLock={true}
+    valueCheckBox={checkBoxVal}
+    onCheckBox={handleCheckBox}
+    labelShort="SH1"
+/>)
+}
+}
+  
+</Playground>
+
+

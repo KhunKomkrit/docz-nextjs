@@ -11,12 +11,14 @@
     "docz:serve": "docz build && docz serve"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.6.1",
     "antd": "^5.23.4",
     "docz": "2.3.1",
     "gatsby": "2.32.13",
     "next": "12.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@types/node": "16.11.68",

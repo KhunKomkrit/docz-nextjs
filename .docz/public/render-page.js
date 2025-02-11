@@ -225298,6 +225298,10 @@ const TableManageShift = ({}) => {
       day_th: 'จ.',
       shift_plans: [{
         shift_code: 'SH1'
+      }, {
+        shift_code: 'SH2'
+      }, {
+        shift_code: 'SH3'
       }]
     }, {
       date: "2025-01-02 00:00:00",
@@ -225314,7 +225318,7 @@ const TableManageShift = ({}) => {
       }]
     }]
   }];
-  const mapColumnDay = dataSource[0].calendar.map(calendar => {
+  const mapColumnDay = dataSource[0].calendar.map((calendar, calenKey) => {
     const day = new Date(calendar.date);
     return {
       title: day.getDate(),
@@ -225327,10 +225331,10 @@ const TableManageShift = ({}) => {
         key: 'street',
         width: '10%',
         render: (_, record) => {
-          console.log(record);
+          console.log(record.calendar);
           return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_0__["Flex"], {
             vertical: true
-          }, record.shift_plans && record.shift_plans.map(itemShift => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          }, record.calendar[calenKey] && record.calendar[calenKey].shift_plans.map(itemShift => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__["default"], {
             colorCode: "#0DAA17",
             isCheckBox: true,
             isLock: true,

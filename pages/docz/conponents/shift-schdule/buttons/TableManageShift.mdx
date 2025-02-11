@@ -55,7 +55,7 @@ const TableManageShift: React.FC<Props> = ({ }) => {
                     dataIndex: 'street',
                     key: 'street',
                     width: '10%',
-                    render: (_: any, record: typeof dataSource[0]['calendar'][0]) => {
+                    render: (_: unknown, record: typeof dataSource[0]['calendar'][0]) => {
                         console.log(record);
 
                         return <Flex vertical={true}>

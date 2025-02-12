@@ -136445,11 +136445,10 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var scope_0 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/3d8a661431d6a9c41c59af3dfab81037.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/3d8a661431d6a9c41c59af3dfab81037.js").default;
-var scope_1 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/856a58203855ce3373ce5a012e8d79d8.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/856a58203855ce3373ce5a012e8d79d8.js").default;
-var scope_2 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/9037a4d696d7610ecb0b4a28f9cad490.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/9037a4d696d7610ecb0b4a28f9cad490.js").default;
-var scope_3 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js").default;
-const __DOCZ_DUMMY_EXPORT_DEFAULT = Object.assign({}, scope_0, scope_1, scope_2, scope_3);
+var scope_0 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/9037a4d696d7610ecb0b4a28f9cad490.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/9037a4d696d7610ecb0b4a28f9cad490.js").default;
+var scope_1 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/cdc2f7291e8feec7b56170d7c24752e5.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/cdc2f7291e8feec7b56170d7c24752e5.js").default;
+var scope_2 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js").default;
+const __DOCZ_DUMMY_EXPORT_DEFAULT = Object.assign({}, scope_0, scope_1, scope_2);
 /* harmony default export */ __webpack_exports__["default"] = (__DOCZ_DUMMY_EXPORT_DEFAULT);
 if (typeof __DOCZ_DUMMY_EXPORT_DEFAULT !== 'undefined' && __DOCZ_DUMMY_EXPORT_DEFAULT && __DOCZ_DUMMY_EXPORT_DEFAULT === Object(__DOCZ_DUMMY_EXPORT_DEFAULT) && Object.isExtensible(__DOCZ_DUMMY_EXPORT_DEFAULT) && !Object.prototype.hasOwnProperty.call(__DOCZ_DUMMY_EXPORT_DEFAULT, '__filemeta')) {
   Object.defineProperty(__DOCZ_DUMMY_EXPORT_DEFAULT, '__filemeta', {
@@ -225256,7 +225255,11 @@ const ShiftShortName = ({
     }
   }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_1__["Flex"], {
     vertical: false
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_1__["Space"], null, isLock && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("span", null, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(_ant_design_icons__WEBPACK_IMPORTED_MODULE_0__["LockFilled"], null)), isCheckBox && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_1__["Checkbox"], {
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_1__["Space"], null, isLock && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("span", null, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(_ant_design_icons__WEBPACK_IMPORTED_MODULE_0__["LockFilled"], {
+    style: {
+      color: '#FFC107'
+    }
+  })), isCheckBox && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_1__["Checkbox"], {
     checked: valueCheckBox,
     onChange: e => onCheckBox(e)
   }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("span", null, labelShort))));
@@ -225285,84 +225288,92 @@ if (typeof ShiftShortName !== 'undefined' && ShiftShortName && ShiftShortName ==
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd */ "../node_modules/antd/es/index.js");
 /* harmony import */ var _buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../buttons/ShiftShortName */ "../pages/components/shifts/buttons/ShiftShortName.tsx");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 
 
 
-const TableManageShift = ({}) => {
-  const dataSource = [{
-    id: '1',
-    name: 'นาย สมมุติ ใจดี',
-    calendar: [{
-      date: "2025-01-01 00:00:00",
-      day_th: 'จ.',
-      shift_plans: [{
-        shift_code: 'SH1'
-      }, {
-        shift_code: 'SH2'
-      }, {
-        shift_code: 'SH3'
-      }]
-    }, {
-      date: "2025-01-02 00:00:00",
-      day_th: 'อ.',
-      shift_plans: [],
-      shift_leave_data: [{
-        leave_type_name: 'ลาป่วย'
-      }]
-    }, {
-      date: "2025-01-03 00:00:00",
-      day_th: 'พ.',
-      shift_plans: [{
-        shift_code: 'SH1'
-      }]
-    }]
-  }];
-  const mapColumnDay = dataSource[0].calendar.map((calendar, calenKey) => {
-    const day = new Date(calendar.date);
-    return {
-      title: day.getDate(),
-      dataIndex: 'calendar',
-      key: 'calendar',
-      width: '10%',
-      children: [{
-        title: `${calendar.day_th}`,
-        dataIndex: 'street',
-        key: 'street',
+
+const TableManageShift = ({
+  dataSource,
+  onSelectChange
+}) => {
+  const {
+    0: selectedRowKeys,
+    1: setSelectedRowKeys
+  } = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])([]);
+  const isRowSelected = Object(react__WEBPACK_IMPORTED_MODULE_2__["useMemo"])(() => {
+    const selectedSet = new Set(selectedRowKeys);
+    return recordId => selectedSet.has(recordId);
+  }, [selectedRowKeys]);
+  const mapColumnDay = Object(react__WEBPACK_IMPORTED_MODULE_2__["useMemo"])(() => {
+    return dataSource[0].calendar.map((calendar, calenKey) => {
+      const day = new Date(calendar.date);
+      return {
+        title: day.getDate(),
+        dataIndex: 'calendar',
+        key: `calendar-${calenKey}`,
         width: '10%',
-        render: (_, record) => {
-          console.log(record.calendar);
-          return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_0__["Flex"], {
-            vertical: true
-          }, record.calendar[calenKey] && record.calendar[calenKey].shift_plans.map(itemShift => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            colorCode: "#0DAA17",
-            isCheckBox: true,
-            isLock: true,
-            valueCheckBox: true,
-            onCheckBox: () => {},
-            labelShort: `${itemShift.shift_code}`
-          })));
-        }
-      }]
-    };
-  });
+        children: [{
+          title: day.toLocaleDateString('th-TH', {
+            weekday: 'short'
+          }),
+          dataIndex: ['calendar', calenKey, 'shift_plans'],
+          key: `shift-${calenKey}`,
+          width: '10%',
+          render: (_, record) => {
+            var _record$calendar$cale;
+            const shifts = ((_record$calendar$cale = record.calendar[calenKey]) === null || _record$calendar$cale === void 0 ? void 0 : _record$calendar$cale.shift_plans) || [];
+            const isSelected = isRowSelected(record.id);
+            return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_0__["Flex"], {
+              vertical: true
+            }, shifts.map((itemShift, index) => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__["default"], {
+              key: `${calenKey}-${index}`,
+              colorCode: "#0DAA17",
+              isCheckBox: !itemShift.is_lock && isSelected,
+              isLock: itemShift.is_lock,
+              valueCheckBox: true,
+              onCheckBox: () => {},
+              labelShort: itemShift.shift_code
+            })));
+          }
+        }]
+      };
+    });
+  }, [dataSource, selectedRowKeys]);
   const columns = [{
-    title: 'no',
+    title: 'ลำดับ',
     dataIndex: 'id',
     key: 'id',
-    render: (_, record, key) => {
-      return ++key;
-    },
-    width: '10%'
+    render: (_, __, index) => index + 1,
+    width: '10%',
+    fixed: 'left'
   }, {
     title: 'พนักงาน',
     dataIndex: 'name',
     key: 'name',
-    width: '20%'
+    width: '20%',
+    fixed: 'left'
   }, ...mapColumnDay];
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_0__["Table"], {
+  const handleSelectChange = (newSelectedRowKeys, newSelectedRow) => {
+    console.log('selectedRowKeys changed: ', newSelectedRowKeys);
+    setSelectedRowKeys(newSelectedRowKeys);
+    onSelectChange === null || onSelectChange === void 0 ? void 0 : onSelectChange(newSelectedRowKeys);
+  };
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: (selectedRowKeys, selectedRows) => handleSelectChange(selectedRowKeys, selectedRows),
+    selections: [antd__WEBPACK_IMPORTED_MODULE_0__["Table"].SELECTION_ALL, antd__WEBPACK_IMPORTED_MODULE_0__["Table"].SELECTION_INVERT, antd__WEBPACK_IMPORTED_MODULE_0__["Table"].SELECTION_NONE]
+  };
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(antd__WEBPACK_IMPORTED_MODULE_0__["Table"], {
+    rowSelection: rowSelection,
     dataSource: dataSource,
-    columns: columns
+    columns: columns,
+    rowKey: record => record.id,
+    scroll: {
+      x: 'max-content'
+    }
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (TableManageShift);
@@ -225671,60 +225682,6 @@ exports.wrapRootElement = true;
 
 /***/ }),
 
-/***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/3d8a661431d6a9c41c59af3dfab81037.js":
-/*!********************************************************************************************!*\
-  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/3d8a661431d6a9c41c59af3dfab81037.js ***!
-  \********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var _pages_components_shifts_tables_TableManageShift__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../pages/components/shifts/tables/TableManageShift */ "../pages/components/shifts/tables/TableManageShift.tsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],
-  Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],
-  TableManageShift: _pages_components_shifts_tables_TableManageShift__WEBPACK_IMPORTED_MODULE_1__["default"],
-  useState: react__WEBPACK_IMPORTED_MODULE_2__["useState"],
-  React: react__WEBPACK_IMPORTED_MODULE_2__
-});
-
-/***/ }),
-
-/***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/856a58203855ce3373ce5a012e8d79d8.js":
-/*!********************************************************************************************!*\
-  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/856a58203855ce3373ce5a012e8d79d8.js ***!
-  \********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var _pages_components_shifts_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../pages/components/shifts/buttons/ShiftShortName */ "../pages/components/shifts/buttons/ShiftShortName.tsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],
-  Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],
-  ShiftNameButton: _pages_components_shifts_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__["default"],
-  useState: react__WEBPACK_IMPORTED_MODULE_2__["useState"],
-  React: react__WEBPACK_IMPORTED_MODULE_2__
-});
-
-/***/ }),
-
 /***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/9037a4d696d7610ecb0b4a28f9cad490.js":
 /*!********************************************************************************************!*\
   !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/9037a4d696d7610ecb0b4a28f9cad490.js ***!
@@ -225747,6 +225704,31 @@ __webpack_require__.r(__webpack_exports__);
   Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],
   ShiftShortName: _pages_components_shifts_buttons_ShiftShortName__WEBPACK_IMPORTED_MODULE_1__["default"],
   useState: react__WEBPACK_IMPORTED_MODULE_2__["useState"],
+  React: react__WEBPACK_IMPORTED_MODULE_2__
+});
+
+/***/ }),
+
+/***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/cdc2f7291e8feec7b56170d7c24752e5.js":
+/*!********************************************************************************************!*\
+  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/cdc2f7291e8feec7b56170d7c24752e5.js ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
+/* harmony import */ var _pages_components_shifts_tables_TableManageShift__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../pages/components/shifts/tables/TableManageShift */ "../pages/components/shifts/tables/TableManageShift.tsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],
+  Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],
+  TableManageShift: _pages_components_shifts_tables_TableManageShift__WEBPACK_IMPORTED_MODULE_1__["default"],
   React: react__WEBPACK_IMPORTED_MODULE_2__
 });
 

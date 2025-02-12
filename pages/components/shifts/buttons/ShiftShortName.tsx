@@ -19,6 +19,7 @@ const CustomCard = styled(Card)`
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
+    height: 100%;
   }
 `;
 
@@ -43,17 +44,17 @@ const ShiftShortName: React.FC<Props> = ({
     return (
         <CustomCard style={{
             width: "100%",
-            backgroundColor: colorCode
+            height: "100%",
+            backgroundColor: colorCode,
+            borderRadius: 'inherit'
         }} >
-            <Flex justify="center" align="center" >
-                <Flex vertical={true} style={{textAlign: "center"}}>
-                    <Flex vertical={false}>
-                        <Space>
-                            {isLock && <span><LockFilled/></span>}
-                            {isCheckBox && <Checkbox checked={valueCheckBox} onChange={(e) => onCheckBox(e)} />}
-                        </Space>
-                    </Flex>
-                    <span>{labelShort}</span>
+            <Flex justify="center" align="center" style={{ height: '100%' }}>
+                <Flex vertical={false} style={{ textAlign: "center" }}>
+                    <Space>
+                        {isLock && <span><LockFilled style={{ color: '#FFC107' }} /></span>}
+                        {isCheckBox && <Checkbox checked={valueCheckBox} onChange={(e) => onCheckBox(e)} />}
+                        <span style={{color: 'white', fontWeight: 'bold'}}>{labelShort}</span>
+                    </Space>
                 </Flex>
             </Flex>
         </CustomCard>

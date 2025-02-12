@@ -1,77 +1,176 @@
-import { Flex, Table } from "antd";
+import {  Flex, Table } from "antd";
 import ShiftShortName from "../buttons/ShiftShortName";
+import { Key, useState, useMemo } from "react";
+import { TableRowSelection } from "antd/es/table/interface";
+
+interface Props {
+    dataSource: Array<object>,
+    onSelectChange?: (selectedRows: number[]) => void;
+}
+
+interface DataType {
+    id: number;
+    name: string,
+    calendar: {shift_plans: []}[]
+  }
 
 
-interface Props { }
+const TableManageShift: React.FC<Props> = ({ dataSource, onSelectChange }) => {
+    const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
+    const [selectedShifts, setSelectedShifts] = useState<{[key: string]: {[key: string]: boolean}}>({});
 
-const TableManageShift: React.FC<Props> = ({ }) => {
-    const dataSource = [
-        {
-            id: '1',
-            name: 'นาย สมมุติ ใจดี',
-            calendar: [
-                { date: "2025-01-01 00:00:00", day_th: 'จ.', shift_plans: [{ shift_code: 'SH1' },{ shift_code: 'SH2' },{ shift_code: 'SH3' }] },
-                { date: "2025-01-02 00:00:00", day_th: 'อ.', shift_plans: [], shift_leave_data: [{ leave_type_name: 'ลาป่วย' }] },
-                { date: "2025-01-03 00:00:00", day_th: 'พ.', shift_plans: [{ shift_code: 'SH1' }] }
-            ]
-        },
-    ];
+    const isRowSelected = useMemo(() => {
+        const selectedSet = new Set(selectedRowKeys);
+        return (recordId: number) => selectedSet.has(recordId);
+    }, [selectedRowKeys]);
 
-    const mapColumnDay = dataSource[0].calendar.map((calendar,calenKey) => {
-        const day = new Date(calendar.date)
-        return {
-            title: day.getDate(),
-            dataIndex: 'calendar',
-            key: 'calendar',
-            width: '10%',
-            children: [
-                {
-                    title: `${calendar.day_th}`,
-                    dataIndex: 'street',
-                    key: 'street',
-                    width: '10%',
-                    render: (_: unknown, record: typeof dataSource[0]) => {
-                        console.log(record.calendar);
+    const handleShiftCheckbox = (recordId: number, date: string, shiftCode: string, checked: boolean) => {
+        const shiftKey = `${recordId}-${date}-${shiftCode}`;
+        setSelectedShifts(prev => ({
+            ...prev,
+            [recordId]: {
+                ...(prev[recordId] || {}),
+                [shiftKey]: checked
+            }
+        }));
+    };
 
-                        return <Flex vertical={true}>
-                            {
-                              record.calendar[calenKey] &&  record.calendar[calenKey].shift_plans.map((itemShift) => <ShiftShortName
-                                    colorCode="#0DAA17"
-                                    isCheckBox={true}
-                                    isLock={true}
-                                    valueCheckBox={true}
-                                    onCheckBox={() => { }}
-                                    labelShort={`${itemShift.shift_code}`}
-                                />)
-                            }
-                        </Flex>
+    const mapColumnDay = useMemo(() => {
+        return (dataSource[0] as any).calendar.map((calendar: {date: string}, calenKey: number) => {
+            const day = new Date(calendar.date)
+            return {
+                title: day.getDate(),
+                dataIndex: 'calendar',
+                key: `calendar-${calenKey}`,
+                width: 20,
+                align: 'center',
+                onHeaderCell: () => ({
+                    style: {
+                        textAlign: 'center',
+                        fontWeight: 500,
+
                     }
-                }
-            ]
-        }
-    })
+                }),
+                onCell: () => ({
+                    style: {
+                        padding: '0px'
+                    }
+                }),
+                children: [
+                    {
+                        title: day.toLocaleDateString('th-TH', { weekday: 'short' }),
+                        dataIndex: ['calendar', calenKey, 'shift_plans'],
+                        key: `shift-${calenKey}`,
+                        align: 'center',
+                        onHeaderCell: () => ({
+                            style: {
+                                textAlign: 'center',
+                                fontWeight: 500,
+                            }
+                        }),
+                        onCell: () => ({
+                            style: {
+                                padding: '0px'
+                            }
+                        }),
+                        render: (_: any, record: DataType) => {
+                            const shifts = record.calendar[calenKey]?.shift_plans || [];
+                            let isSelected = isRowSelected(record.id);
+
+                            if (!isSelected && selectedShifts[record.id]) {
+                                setSelectedShifts(prev => {
+                                    const newState = { ...prev };
+                                    delete newState[record.id];
+                                    return newState;
+                                });
+                            }
+
+                            return (
+                                <Flex vertical>
+                                    {shifts.map((itemShift: any, index: number) => {
+                                        const shiftKey = `${record.id}-${calendar.date}-${itemShift.shift_code}`;
+                                        
+                                        const showCheckbox = !itemShift.is_lock && 
+                                                           !itemShift.shift_code.includes('OFF') && 
+                                                           isSelected;
+
+                                        if (isSelected && selectedShifts[record.id]?.[shiftKey] === undefined && showCheckbox) {
+                                            handleShiftCheckbox(record.id, calendar.date, itemShift.shift_code, true);
+                                        }
+
+                                        return (
+                                            <ShiftShortName             
+                                                key={`${calenKey}-${index}`}
+                                                colorCode={`${itemShift.shift_color}`}
+                                                isCheckBox={showCheckbox}
+                                                isLock={itemShift.is_lock}
+                                                valueCheckBox={selectedShifts[record.id]?.[shiftKey] || false}
+                                                onCheckBox={(e: any) => {
+                                                    handleShiftCheckbox(
+                                                        record.id,
+                                                        calendar.date,
+                                                        itemShift.shift_code,
+                                                        e.target.checked
+                                                    );
+                                                }}
+                                                labelShort={itemShift.shift_code}
+                                            />
+                                        );
+                                    })}
+                                </Flex>
+                            );
+                        }
+                    }
+                ]
+            }
+        });
+    }, [dataSource, selectedRowKeys, selectedShifts]);
 
     const columns = [
         {
-            title: 'no',
+            title: '#',
             dataIndex: 'id',
             key: 'id',
-            render: (_: any, record: any, key: number) => {
-                return ++key
-            },
-            width: '10%',
+            render: (_: any, __: any, index: number) => index + 1,
+            width: 10,
+            fixed: 'left',
+
         },
         {
             title: 'พนักงาน',
             dataIndex: 'name',
             key: 'name',
-            width: '20%',
+            width: 150,
+            fixed: 'left'
         },
         ...mapColumnDay
     ];
 
+    const handleSelectChange = (newSelectedRowKeys: number[], newSelectedRow: DataType[]) => {
+        setSelectedRowKeys(newSelectedRowKeys);
+        if (newSelectedRowKeys.length === 0) {
+            setSelectedShifts({});
+        }
+        onSelectChange?.(newSelectedRowKeys);
+    };
+
+    const rowSelection: TableRowSelection<DataType> = {
+        selectedRowKeys,
+        onChange: (selectedRowKeys: Key[], selectedRows: DataType[]) => handleSelectChange(selectedRowKeys as number[],selectedRows),
+        selections: [
+          Table.SELECTION_ALL,
+          Table.SELECTION_INVERT,
+          Table.SELECTION_NONE,
+        ]
+    }
     return (
-        <Table dataSource={dataSource} columns={columns} />
+        <Table<DataType> 
+            rowSelection={rowSelection} 
+            dataSource={dataSource as readonly DataType[]} 
+            columns={columns}
+            rowKey={(record) => record.id}
+            scroll={{ x: 'max-content' }}
+        />
     )
 }
 
